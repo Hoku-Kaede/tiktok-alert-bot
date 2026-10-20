@@ -20,6 +20,7 @@ load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN", "").strip()
 CHECK_INTERVAL_MINUTES = max(2, int(os.getenv("CHECK_INTERVAL_MINUTES", "5")))
 TIKTOK_PROXY = os.getenv("TIKTOK_PROXY", "").strip() or None
+TEST_GUILD_ID = os.getenv("TEST_GUILD_ID", "").strip()
 STATE_FILE = Path(__file__).resolve().parent / "watchlist.json"
 USERNAME_RE = re.compile(r"^[A-Za-z0-9._]{2,24}$")
 
@@ -185,6 +186,16 @@ async def check_all_targets():
 @check_all_targets.before_loop
 async def before_check_all_targets():
     await bot.wait_until_ready()
+
+
+async def setup_hook():
+    if TEST_GUILD_ID and TEST_GUILD_ID.isdigit():
+        guild = discord.Object(id=int(TEST_GUILD_ID))
+        bot.tree.copy_global_to(guild=guild)
+        synced = await bot.tree.sync(guild=guild)
+    else:
+        synced = await bot.tree.sync()
+    log.info("Synced %d application command(s)", len(synced))
 
 
 @bot.event
