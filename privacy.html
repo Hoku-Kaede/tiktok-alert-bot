@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — TikTok Alert Bot</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+  h1 { font-size: 1.8em; } h2 { font-size: 1.25em; margin-top: 1.8em; }
+  .muted { color: #666; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy</h1>
+<p class="muted">Last updated: October 20, 2026</p>
+
+<p>This Privacy Policy explains how TikTok Alert Bot ("the Bot") handles data when it operates in your Discord server.</p>
+
+<h2>1. Data We Collect</h2>
+<ul>
+  <li><strong>Server configuration data:</strong> server (guild) ID, the Discord channel IDs you choose for notifications, and the TikTok usernames you ask the Bot to watch. Stored in a local <code>watchlist.json</code> file on the machine running the Bot.</li>
+  <li><strong>Public TikTok data:</strong> publicly visible posts, captions, and live-stream status of watched accounts, used solely to generate notifications.</li>
+  <li><strong>Bot token:</strong> the Discord bot token, stored in a local environment file (<code>.env</code>) on the machine running the Bot.</li>
+</ul>
+<p>The Bot does <strong>not</strong> collect message history, personal messages, emails, phone numbers, or payment information. It only reads the slash commands you send it.</p>
+
+<h2>2. How We Use Data</h2>
+<p>Collected data is used only to:</p>
+<ul>
+  <li>Deliver the notifications you requested (new posts, live streams)</li>
+  <li>Maintain your server's watch list</li>
+</ul>
+
+<h2>3. Data Sharing</h2>
+<p>We do not sell, trade, or rent your data. Data is only processed by the third parties required to operate the Bot:</p>
+<ul>
+  <li><strong>Discord</strong> — to deliver messages (Discord's Privacy Policy applies)</li>
+  <li><strong>TikTok</strong> — the Bot requests public profile information (TikTok's Privacy Policy applies)</li>
+  <li><strong>Optional proxy / signing services</strong> — if you configure a proxy, requests are routed through it as directed by the server operator</li>
+</ul>
+
+<h2>4. Data Storage and Retention</h2>
+<p>Watch-list data is stored locally on the machine hosting the Bot and retained until you remove it with the <code>/unwatch</code> command, remove the Bot from your server, or the server operator deletes the data.</p>
+
+<h2>5. Data Removal</h2>
+<p>You can remove your server's data at any time by running <code>/unwatch</code> for each watched account or by kicking the Bot from your server. Server operators may delete <code>watchlist.json</code> to erase all stored data.</p>
+
+<h2>6. Children's Privacy</h2>
+<p>The Bot is not directed at children under 13, and we do not knowingly collect data from them.</p>
+
+<h2>7. Changes</h2>
+<p>We may update this Privacy Policy at any time. Continued use of the Bot after changes constitutes acceptance of the revised policy.</p>
+
+<h2>8. Contact</h2>
+<p>Questions about this Privacy Policy: <a href="mailto:mewttukuttu@gmail.com">mewttukuttu@gmail.com</a></p>
+</body>
+</html>
